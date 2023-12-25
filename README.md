@@ -32,15 +32,21 @@ Modifiers:
 # Examples:
 
 ```
-   override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
+ override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
         Layout {
             avatarImage
                 .size(componentSize)
                 .rounded
                 .corner(offset: cornerOffset) {
-             OnlineIndicator(size: size,
-                                        primaryColor: .systemGreen,
-                                        strokeColor: .systemBackground)
+                    View(backgroundColor: .white)
+                        .size(outerSize)
+                        .rounded
+                        .overlay {
+                            View(backgroundColor: .systemGreen)
+                                .size(innerSize)
+                                .rounded
+                                .center()
+                        }
                 }
         }
     }
