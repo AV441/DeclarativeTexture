@@ -4,7 +4,7 @@ Provides declarative SwiftUI code style(DSL) for Texture(AsyncDisplayKit)
 
 # How to use:
 
-Highly recommended to use AutoManageableNode or AutoManageadleCell to create UI your custom components. All you need to specify is `layoutSpecThatFits` method.
+Highly recommended to use AutoManageableNode or AutoManageableCell to layout your custom views. All you need to specify is `layoutSpecThatFits` method.
 Start from adding `Layout` wrapper, that takes `@LayoutBuilder` block and returns `ASLayoutSpec`.
 Inside Layout block you can use all of basic Texture LayoutSpec subclasses alongside with modifiers.
 
