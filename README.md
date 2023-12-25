@@ -52,36 +52,31 @@ Resulting component:
 ```
  override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
         Layout {
-            VStack(justifyContent: .spaceBetween) {
-                HStack(spacing: 10) {
-                    Avatar(type: .basic,
-                           size: .XL,
-                           model: model.avatar)
-                    .alignSelf(.center)
-                    VStack {
-                        Text(string: model.name, attributes: .title)
-                        Text(string: model.phoneNumber, attributes: .subtitle)
-                        HStack(spacing: 4) {
-                            Image(named: "mail")
-                                .tintColor(.secondaryLabel)
-                                .size(.init(width: 17, height: 17))
-                                .alignSelf(.center)
-                            Text(string: model.email, attributes: .subtitle)
-                                .flexShrink(1)
-                        }
+            HStack(spacing: 10) {
+                Avatar(type: .basic,
+                       size: .XL,
+                       model: model.avatar)
+                .alignSelf(.center)
+                VStack {
+                    Text(string: model.name, attributes: .title)
+                    Text(string: model.phoneNumber, attributes: .subtitle)
+                    HStack(spacing: 4) {
+                        Image(named: "mail")
+                            .tintColor(.secondaryLabel)
+                            .size(.init(width: 17, height: 17))
+                            .alignSelf(.center)
+                        Text(string: model.email, attributes: .subtitle)
+                            .flexShrink(1)
                     }
-                    .flexShrink(1)
                 }
-                Separator(color: .secondarySystemFill)
-                    .padding(.left, 66)
+                .flexShrink(1)
             }
-            .padding(.init(top: 8, left: 24, bottom: 0, right: 24))
+            .padding(24)
         }
     }
-}
 ```
 Resulting component:
 
-![Contacts_Item](https://github.com/AV441/DeclarativeTexture/assets/103361928/21b0300e-35a0-4dcd-8231-617280cb924b)
+![Left](https://github.com/AV441/DeclarativeTexture/assets/103361928/de61e280-8d17-4fc9-a18b-f2c7efe5d22a)
 
 
