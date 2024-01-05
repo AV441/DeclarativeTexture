@@ -74,7 +74,7 @@ final class Avatar: AutoManageableNode, SizableComponent {
         Layout {
             Image(named: model.avatar ?? "")
                 .backgroundColor(.secondarySystemFill)
-                .size(componentSize)
+                .preferredSize(componentSize)
                 .rounded
                 .overlay {
                     if model.avatar == nil {

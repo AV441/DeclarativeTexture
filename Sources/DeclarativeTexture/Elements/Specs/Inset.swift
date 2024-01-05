@@ -8,7 +8,7 @@ import AsyncDisplayKit
 
 public struct Inset: LayoutElement {
     
-    public var insets: UIEdgeInsets
+    private let insets: UIEdgeInsets
     private let content: LayoutElement
     
     public init(insets: UIEdgeInsets,

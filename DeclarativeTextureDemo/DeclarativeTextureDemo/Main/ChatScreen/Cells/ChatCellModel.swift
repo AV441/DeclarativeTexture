@@ -9,13 +9,7 @@ import Foundation
 
 struct ChatCellModel {
     
-    struct ReplyOnMessage {
-        
-        let name: String
-        let message: String
-    }
-    
-    let reply: ReplyOnMessage?
+    let reply: Reply.Model?
     let avatar: Avatar.Model
     let name: String
     let message: String

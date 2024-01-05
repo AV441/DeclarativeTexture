@@ -10,7 +10,7 @@ public struct FlexBasisModifier: ElementModifier {
     
     private let flexBasis: ASDimension
     
-    public init(flexBasis: ASDimension) {
+    init(flexBasis: ASDimension) {
         self.flexBasis = flexBasis
     }
     

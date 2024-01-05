@@ -1,7 +1,6 @@
 //
 //  AlignSelfModifier.swift
 //
-//
 //  Created by Андрей Ведищев on 18.12.2023.
 //
 
@@ -11,7 +10,7 @@ public struct AlignSelfModifier: ElementModifier {
     
     private let alignSelf: ASStackLayoutAlignSelf
     
-    public init(alignSelf: ASStackLayoutAlignSelf) {
+    init(alignSelf: ASStackLayoutAlignSelf) {
         self.alignSelf = alignSelf
     }
     

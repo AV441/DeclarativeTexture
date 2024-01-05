@@ -8,13 +8,13 @@ import AsyncDisplayKit
 
 public struct VStack: LayoutElement {
     
-    let spacing: CGFloat
-    let justifyContent: ASStackLayoutJustifyContent
-    let alignItems: ASStackLayoutAlignItems
-    let flexWrap: ASStackLayoutFlexWrap
-    let alignContent: ASStackLayoutAlignContent
-    let lineSpacing: CGFloat
-    let children: LayoutElement
+    private let spacing: CGFloat
+    private let justifyContent: ASStackLayoutJustifyContent
+    private let alignItems: ASStackLayoutAlignItems
+    private let flexWrap: ASStackLayoutFlexWrap
+    private let alignContent: ASStackLayoutAlignContent
+    private let lineSpacing: CGFloat
+    private let children: LayoutElement
     
     public init(spacing: CGFloat = 0,
                 justifyContent: ASStackLayoutJustifyContent = .start,

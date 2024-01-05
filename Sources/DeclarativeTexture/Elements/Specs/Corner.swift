@@ -26,7 +26,7 @@ public struct Corner: LayoutElement {
     public func build() -> [ASLayoutElement] {
         let spec = ASCornerLayoutSpec(child: content.build().first ?? ASLayoutSpec(),
                                       corner: cornerContent.build().first ?? ASLayoutSpec(),
-                                      location: self.location)
+                                      location: location)
         spec.offset = offset
         return [spec]
     }

@@ -29,4 +29,8 @@ public struct LayoutBuilder {
     public static func buildOptional<Component: LayoutElement>(_ component: Component?) -> OptionalLayout<Component> {
         .init(content: { component })
     }
+    
+    public static func buildArray(_ components: [LayoutElement]) -> ComplexLayout {
+        .init(components)
+    }
 }

@@ -36,6 +36,18 @@ extension [NSAttributedString.Key: Any] {
     static var message: Self {
         [.font: UIFont.Regular.body1, .foregroundColor: UIColor.label]
     }
+    
+    static var footnote: Self {
+        [.font: UIFont.Regular.footnote, .foregroundColor: UIColor.label]
+    }
+    
+    static var caption2: Self {
+        [.font: UIFont.Regular.caption2, .foregroundColor: UIColor.secondaryLabel]
+    }
+    
+    static var placeholder: Self {
+        [.font: UIFont.Regular.body1, .foregroundColor: UIColor.secondaryLabel]
+    }
 }
 
 extension UIFont {

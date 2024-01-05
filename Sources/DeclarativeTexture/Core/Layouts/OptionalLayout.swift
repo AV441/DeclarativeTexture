@@ -10,7 +10,7 @@ public struct OptionalLayout<Content: LayoutElement>: LayoutElement {
     
     private let content: Content?
     
-    public init(content: () -> Content?) {
+    init(content: () -> Content?) {
         self.content = content()
     }
     

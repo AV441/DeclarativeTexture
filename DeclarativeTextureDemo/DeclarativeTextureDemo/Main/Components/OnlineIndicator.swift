@@ -14,7 +14,8 @@ final class OnlineIndicator: AutoManageableNode, SizableComponent {
     
     private let primaryColor: UIColor
     private let strokeColor: UIColor
-    
+    private lazy var backgroundNode = View(backgroundColor: strokeColor)
+    private lazy var overlayNode = View(backgroundColor: primaryColor)
     init(size: ComponentSize,
          primaryColor: UIColor,
          strokeColor: UIColor) {
@@ -61,12 +62,12 @@ final class OnlineIndicator: AutoManageableNode, SizableComponent {
     
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
         Layout {
-            View(backgroundColor: strokeColor)
-                .size(outerSize)
+            backgroundNode
+                .preferredSize(outerSize)
                 .rounded
                 .overlay {
-                    View(backgroundColor: primaryColor)
-                        .size(innerSize)
+                    overlayNode
+                        .preferredSize(innerSize)
                         .rounded
                         .center()
                 }

@@ -13,6 +13,24 @@ final class ListCell: AutoManageableCell {
 
     private let model: ListCellModel
     
+    private lazy var avatar = Avatar(type: model.isOnline ? .withOnlineIndicator : .basic,
+                                     size: .XL,
+                                     model: model.avatar)
+    private lazy var nameNode = Text(string: model.name, attributes: .title)
+        .maximumNumberOfLines(1)
+        .layerBacked
+    private lazy var positionNode = Text(string: model.position, attributes: .subtitle)
+        .maximumNumberOfLines(1)
+        .layerBacked
+    private lazy var emailNode = Text(string: model.email, attributes: .subtitle)
+        .maximumNumberOfLines(1)
+        .layerBacked
+    private lazy var emailIcon = Image(named: "mail")
+        .tintColor(.secondaryLabel)
+        .layerBacked
+    private lazy var separator = Separator(color: .secondarySystemFill)
+    
+    
     init(_ model: ListCellModel) {
         self.model = model
         super.init()
@@ -22,34 +40,24 @@ final class ListCell: AutoManageableCell {
         Layout {
             VStack(justifyContent: .spaceBetween) {
                 HStack(spacing: 10) {
-                    Avatar(type: model.isOnline ? .withOnlineIndicator : .basic,
-                           size: .XL,
-                           model: model.avatar)
-                    .alignSelf(.center)
+                    avatar
+                        .alignSelf(.center)
                     VStack {
-                        Text(string: model.name, attributes: .title)
-                            .maximumNumberOfLines(1)
-                            .layerBacked
+                        nameNode
                         if !model.position.isEmpty {
-                            Text(string: model.position, attributes: .subtitle)
-                                .maximumNumberOfLines(1)
-                                .layerBacked
+                            positionNode
                         }
                         HStack(spacing: 4) {
-                            Image(named: "mail")
-                                .tintColor(.secondaryLabel)
-                                .layerBacked
-                                .size(.init(width: 17, height: 17))
+                            emailIcon
+                                .preferredSize(.init(width: 17, height: 17))
                                 .alignSelf(.center)
-                            Text(string: model.email, attributes: .subtitle)
-                                .maximumNumberOfLines(1)
-                                .layerBacked
+                            emailNode
                                 .flexShrink(1)
                         }
                     }
                     .flexShrink(1)
                 }
-                Separator(color: .secondarySystemFill)
+                separator
                     .padding(.left, 66)
             }
             .padding(.init(top: 8, left: 24, bottom: 0, right: 24))
@@ -58,5 +66,5 @@ final class ListCell: AutoManageableCell {
 }
 
 #Preview {
-    ListViewController()
+    UINavigationController(rootViewController: ListViewController())
 }
