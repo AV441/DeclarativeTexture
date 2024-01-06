@@ -1,8 +1,5 @@
 //
 //  BidirectionalList.swift
-//  DeclarativeTextureDemo
-//
-//  Created by Андрей Ведищев on 30.12.2023.
 //
 
 import AsyncDisplayKit
@@ -10,24 +7,24 @@ import DeclarativeTexture
 
 final class BidirectionalViewController: ASDKViewController<AutoManageableNode> {
     
-//    private lazy var horizontalContent = [HorizontalListNode(), HorizontalListNode()] {
-//        didSet {
-//            horizontalList.set(horizontalContent)
-//            if oldValue.isEmpty {
-//                verticalContent.insert(horizontalList, at: 0)
-//            } else if horizontalContent.isEmpty {
-//                verticalContent.removeFirst()
-//            }
-//        }
-//    }
-    private lazy var verticalContent = [/*horizontalList, */VerticalListNode()] {
+    private lazy var horizontalContent = [HorizontalListNode(), HorizontalListNode()] {
+        didSet {
+            horizontalList.set(horizontalContent)
+            if oldValue.isEmpty {
+                verticalContent.insert(horizontalList, at: 0)
+            } else if horizontalContent.isEmpty {
+                verticalContent.removeFirst()
+            }
+        }
+    }
+    private lazy var verticalContent = [horizontalList, VerticalListNode()] {
         didSet {
             verticalList.set(verticalContent)
         }
     }
-//    private lazy var horizontalList = List(.horizontal,
-//                                           spacing: -38,
-//                                           horizontalContent)
+    private lazy var horizontalList = List(.horizontal,
+                                           spacing: -38,
+                                           horizontalContent)
     private lazy var verticalList = List(spacing: 10,
                                          verticalContent)
     
@@ -36,7 +33,7 @@ final class BidirectionalViewController: ASDKViewController<AutoManageableNode> 
                                      style: .plain,
                                      target: self,
                                      action: #selector(addVerticalItem))
-        button.tintColor = .white
+        button.tintColor = .label
         return button
     }()
     private lazy var plusHButton: UIBarButtonItem = {
@@ -44,7 +41,7 @@ final class BidirectionalViewController: ASDKViewController<AutoManageableNode> 
                                      style: .plain,
                                      target: self,
                                      action: #selector(addHorizontalItem))
-        button.tintColor = .white
+        button.tintColor = .label
         return button
     }()
     private lazy var minusVButton: UIBarButtonItem = {
@@ -69,7 +66,7 @@ final class BidirectionalViewController: ASDKViewController<AutoManageableNode> 
         navigationItem.title = "Colors"
         navigationItem.rightBarButtonItems = [plusHButton, minusHButton]
         navigationItem.leftBarButtonItems = [minusVButton, plusVButton]
-        node.layoutSpecBlock = { [weak self] (node, constrainedSize) -> ASLayoutSpec in
+        node.layoutSpecBlock = { [weak self] (_, constrainedSize) -> ASLayoutSpec in
             self?.layoutSpecThatFits(constrainedSize) ?? ASLayoutSpec()
         }
     }
@@ -93,7 +90,7 @@ extension BidirectionalViewController {
     }
     
     @objc func addHorizontalItem() {
-//        horizontalContent.append(HorizontalListNode())
+        horizontalContent.append(HorizontalListNode())
     }
     
     @objc func removeVerticalItem() {
@@ -102,8 +99,8 @@ extension BidirectionalViewController {
     }
     
     @objc func removeHorizontalItem() {
-//        guard !horizontalContent.isEmpty else { return }
-//        horizontalContent.removeLast()
+        guard !horizontalContent.isEmpty else { return }
+        horizontalContent.removeLast()
     }
 }
 

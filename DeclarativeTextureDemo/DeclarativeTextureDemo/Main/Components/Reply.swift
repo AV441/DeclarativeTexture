@@ -1,8 +1,5 @@
 //
 //  Reply.swift
-//  DeclarativeTextureDemo
-//
-//  Created by Андрей Ведищев on 05.01.2024.
 //
 
 import AsyncDisplayKit

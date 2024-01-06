@@ -1,34 +1,17 @@
 //
-//  ScrollView.swift
-//
-//  Created by Андрей Ведищев on 26.12.2023.
+//  List.swift
 //
 
 import AsyncDisplayKit
 
-public class ScrollView: ASScrollNode {
-    
-    private let content: LayoutElement
-    
-    public init(@LayoutBuilder _ content: () -> LayoutElement) {
-        self.content = content()
-        super.init()
-        automaticallyManagesSubnodes = true
-        automaticallyManagesContentSize = true
-        automaticallyRelayoutOnSafeAreaChanges = true
-    }
-    
-    public override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
-        Layout {
-            content
-        }
-    }
-}
-
-extension ASDisplayNode: Identifiable {}
-
 public class List: ASScrollNode {
-    
+
+    public enum Direction {
+        
+        case vertical
+        case horizontal
+    }
+
     private let direction: Direction
     private let spacing: CGFloat
     private var content: [ASDisplayNode] {
@@ -36,13 +19,7 @@ public class List: ASScrollNode {
             setNeedsLayout()
         }
     }
-    
-    public enum Direction {
-        
-        case vertical
-        case horizontal
-    }
-    
+
     public init(_ direction: Direction = .vertical,
                 spacing: CGFloat = 0,
                 _ content: [ASDisplayNode]) {
@@ -62,11 +39,11 @@ public class List: ASScrollNode {
             scrollableDirections = [.left, .right]
         }
     }
-    
+
     public func set(_ content: [ASDisplayNode]) {
         self.content = content
     }
-    
+
     public override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
         Layout {
             if direction == .vertical {

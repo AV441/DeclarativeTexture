@@ -1,8 +1,5 @@
 //
 //  Bubble.swift
-//  DeclarativeTextureDemo
-//
-//  Created by Андрей Ведищев on 25.12.2023.
 //
 
 import AsyncDisplayKit
@@ -74,7 +71,7 @@ private extension UIBezierPath {
         let width = rect.width
         let height = rect.height
         move(to: CGPoint(x: 25, y: height))
-        addLine(to: CGPoint(x:  20, y: height))
+        addLine(to: CGPoint(x: 20, y: height))
         addCurve(to: CGPoint(x: 0, y: height - 20),
                  controlPoint1: CGPoint(x: 8, y: height),
                  controlPoint2: CGPoint(x: 0, y: height - 8))

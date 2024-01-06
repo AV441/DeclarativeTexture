@@ -1,8 +1,5 @@
 //
 //  KeyboardManager.swift
-//  DeclarativeTextureDemo
-//
-//  Created by Андрей Ведищев on 03.01.2024.
 //
 
 import UIKit

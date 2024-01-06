@@ -1,3 +1,4 @@
+// swiftlint:disable all
 import XCTest
 @testable import DeclarativeTexture
 
@@ -10,3 +11,4 @@ final class DeclarativeTextureTests: XCTestCase {
         // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
     }
 }
+// swiftlint:enable all

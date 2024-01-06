@@ -1,8 +1,5 @@
 //
 //  Avatar.swift
-//  DeclarativeTextureDemo
-//
-//  Created by Андрей Ведищев on 19.12.2023.
 //
 
 import AsyncDisplayKit
@@ -29,34 +26,34 @@ final class Avatar: AutoManageableNode, SizableComponent {
     
     var componentSize: CGSize {
         switch size {
-        case .XS:
+        case .xs:
                 .init(width: 24, height: 24)
-        case .S:
+        case .s:
                 .init(width: 32, height: 32)
-        case .M:
+        case .m:
                 .init(width: 38, height: 38)
-        case .L:
+        case .l:
                 .init(width: 48, height: 48)
-        case .XL:
+        case .xl:
                 .init(width: 56, height: 56)
-        case .XXL:
+        case .xxl:
                 .init(width: 96, height: 96)
         }
     }
     
     var cornerOffset: CGPoint {
         switch size {
-        case .XS:
+        case .xs:
                 .init(x: -3, y: 3)
-        case .S:
+        case .s:
                 .init(x: -4, y: 4)
-        case .M:
+        case .m:
                 .init(x: -6, y: 6)
-        case .L:
+        case .l:
                 .init(x: -7, y: 7)
-        case .XL:
+        case .xl:
                 .init(x: -8, y: 8)
-        case .XXL:
+        case .xxl:
                 .init(x: -8, y: 8)
         }
     }

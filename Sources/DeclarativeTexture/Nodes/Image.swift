@@ -1,8 +1,6 @@
 //
 //  Image.swift
 //
-//  Created by Андрей Ведищев on 19.12.2023.
-//
 
 import AsyncDisplayKit
 
@@ -26,6 +24,7 @@ public final class Image: ASImageNode {
         }
     }
     
+    // swiftlint:disable swiftgen_images
     public init(named name: String) {
         super.init()
         if !name.isEmpty, let image = UIImage(named: name) {
@@ -34,6 +33,7 @@ public final class Image: ASImageNode {
             self.image = nil
         }
     }
+    // swiftlint:enable swiftgen_images
     
     public init(contentsOfFile path: String) {
         super.init()

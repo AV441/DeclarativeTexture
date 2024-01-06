@@ -1,12 +1,8 @@
 //
 //  SceneDelegate.swift
-//  DeclarativeTextureDemo
-//
-//  Created by Андрей Ведищев on 17.12.2023.
 //
 
 import UIKit
-import AsyncDisplayKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -20,4 +16,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
     }
 }
-

@@ -1,13 +1,11 @@
 //
 //  HStack.swift
 //
-//  Created by Андрей Ведищев on 17.12.2023.
-//
 
 import AsyncDisplayKit
 
 public struct HStack: LayoutElement {
-    
+
     private let spacing: CGFloat
     private let justifyContent: ASStackLayoutJustifyContent
     private let alignItems: ASStackLayoutAlignItems
@@ -15,7 +13,7 @@ public struct HStack: LayoutElement {
     private let alignContent: ASStackLayoutAlignContent
     private let lineSpacing: CGFloat
     private let children: LayoutElement
-    
+
     public init(spacing: CGFloat = 0,
                 justifyContent: ASStackLayoutJustifyContent = .start,
                 alignItems: ASStackLayoutAlignItems = .stretch,
@@ -31,7 +29,7 @@ public struct HStack: LayoutElement {
         self.lineSpacing = lineSpacing
         self.children = children()
     }
-    
+
     public func build() -> [ASLayoutElement] {
         [ASStackLayoutSpec(direction: .horizontal,
                            spacing: spacing,

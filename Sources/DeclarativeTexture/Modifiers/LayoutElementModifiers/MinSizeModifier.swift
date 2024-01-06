@@ -1,17 +1,15 @@
 //
 //  MinSizeModifier.swift
 //
-//  Created by Андрей Ведищев on 04.01.2024.
-//
 
 import AsyncDisplayKit
 
 public struct MinSizeModifier: ElementModifier {
-    
+
     private let minSize: CGSize?
     private let minWidth: ASDimension?
     private let minHeight: ASDimension?
-    
+
     init(minSize: CGSize? = nil,
          minWidth: ASDimension? = nil,
          minHeight: ASDimension? = nil) {
@@ -19,7 +17,7 @@ public struct MinSizeModifier: ElementModifier {
         self.minWidth = minWidth
         self.minHeight = minHeight
     }
-    
+
     public func modify(_ element: ASLayoutElement) -> ASLayoutElement {
         minSize.map {
             element.style.minSize = $0

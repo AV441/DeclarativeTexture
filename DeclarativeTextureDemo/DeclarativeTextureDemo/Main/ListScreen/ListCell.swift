@@ -1,12 +1,9 @@
 //
 //  Cell.swift
-//  DeclarativeTextureDemo
-//
-//  Created by Андрей Ведищев on 17.12.2023.
 //
 
-import AVFoundation
 import AsyncDisplayKit
+import AVFoundation
 import DeclarativeTexture
 
 final class ListCell: AutoManageableCell {
@@ -14,7 +11,7 @@ final class ListCell: AutoManageableCell {
     private let model: ListCellModel
     
     private lazy var avatar = Avatar(type: model.isOnline ? .withOnlineIndicator : .basic,
-                                     size: .XL,
+                                     size: .xl,
                                      model: model.avatar)
     private lazy var nameNode = Text(string: model.name, attributes: .title)
         .maximumNumberOfLines(1)
@@ -30,12 +27,12 @@ final class ListCell: AutoManageableCell {
         .layerBacked
     private lazy var separator = Separator(color: .secondarySystemFill)
     
-    
     init(_ model: ListCellModel) {
         self.model = model
         super.init()
     }
     
+    // swiftlint:disable closure_body_length
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
         Layout {
             VStack(justifyContent: .spaceBetween) {
@@ -64,6 +61,7 @@ final class ListCell: AutoManageableCell {
         }
     }
 }
+// swiftlint:enable closure_body_length
 
 #Preview {
     UINavigationController(rootViewController: ListViewController())

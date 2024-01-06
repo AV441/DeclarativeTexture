@@ -1,8 +1,5 @@
 //
 //  Layouts.swift
-//  DeclarativeTextureDemo
-//
-//  Created by Андрей Ведищев on 18.12.2023.
 //
 
 import UIKit

@@ -1,8 +1,5 @@
 //
 //  MentionNode.swift
-//  DeclarativeTextureDemo
-//
-//  Created by Андрей Ведищев on 27.12.2023.
 //
 
 import AsyncDisplayKit
@@ -25,12 +22,13 @@ final class MentionNode: AutoManageableNode {
         super.init()
     }
     
+    // swiftlint:disable closure_body_length
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
         Layout {
             VStack(justifyContent: .spaceBetween) {
                 HStack(spacing: 10) {
                     Avatar(type: .basic,
-                           size: .S,
+                           size: .s,
                            model: .init(avatar: model.avatar,
                                         initials: ""))
                     .alignSelf(.center)
@@ -54,3 +52,4 @@ final class MentionNode: AutoManageableNode {
         }
     }
 }
+// swiftlint:enable closure_body_length

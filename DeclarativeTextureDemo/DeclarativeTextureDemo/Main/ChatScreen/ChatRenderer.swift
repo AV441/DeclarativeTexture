@@ -1,8 +1,5 @@
 //
 //  ChatRenderer.swift
-//  DeclarativeTextureDemo
-//
-//  Created by Андрей Ведищев on 02.01.2024.
 //
 
 import AsyncDisplayKit

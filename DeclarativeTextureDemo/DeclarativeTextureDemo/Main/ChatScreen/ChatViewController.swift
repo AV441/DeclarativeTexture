@@ -1,8 +1,5 @@
 //
 //  DetailsViewController.swift
-//  DeclarativeTextureDemo
-//
-//  Created by Андрей Ведищев on 20.12.2023.
 //
 
 import AsyncDisplayKit

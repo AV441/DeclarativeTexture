@@ -1,8 +1,5 @@
 //
 //  MessageCell.swift
-//  DeclarativeTextureDemo
-//
-//  Created by Андрей Ведищев on 20.12.2023.
 //
 
 import AsyncDisplayKit
@@ -27,6 +24,7 @@ final class ChatCell: AutoManageableCell {
         super.init()
     }
     
+    // swiftlint:disable closure_body_length
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
         Layout {
             HStack {
@@ -76,12 +74,13 @@ final class ChatCell: AutoManageableCell {
         }
     }
 }
+// swiftlint:enable closure_body_length
 
 private extension ChatCell {
     
     func configureAvatarNode() -> Avatar? {
         guard !model.name.isEmpty else { return nil }
-        return Avatar(type: .basic, size: .S, model: model.avatar)
+        return Avatar(type: .basic, size: .s, model: model.avatar)
     }
     
     func configureReplyNode() -> Reply? {

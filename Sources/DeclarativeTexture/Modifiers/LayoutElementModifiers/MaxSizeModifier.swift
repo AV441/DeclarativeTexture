@@ -1,17 +1,15 @@
 //
 //  MaxSizeModifier.swift
 //
-//  Created by Андрей Ведищев on 04.01.2024.
-//
 
 import AsyncDisplayKit
 
 public struct MaxSizeModifier: ElementModifier {
-    
+
     private let maxSize: CGSize?
     private let maxWidth: ASDimension?
     private let maxHeight: ASDimension?
-    
+
     init(maxSize: CGSize? = nil,
          maxWidth: ASDimension? = nil,
          maxHeight: ASDimension? = nil) {
@@ -19,7 +17,7 @@ public struct MaxSizeModifier: ElementModifier {
         self.maxWidth = maxWidth
         self.maxHeight = maxHeight
     }
-    
+
     public func modify(_ element: ASLayoutElement) -> ASLayoutElement {
         maxSize.map {
             element.style.maxSize = $0
